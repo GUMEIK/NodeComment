@@ -1,0 +1,23 @@
+{
+  "name": "NodeComment",
+  "version": "1.0.0",
+  "description": "使用nodejs搭建的一款纯粹的评论系统 # 项目启动 2020年04月28日，目标利用node实现一款纯粹的评论系统。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GUMEIK/NodeComment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GUMEIK/NodeComment/issues"
+  },
+  "homepage": "https://github.com/GUMEIK/NodeComment#readme",
+  "dependencies": {
+    "node": "^14.0.0"
+  }
+}
