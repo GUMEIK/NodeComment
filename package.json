@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/GUMEIK/NodeComment#readme",
   "dependencies": {
+    "mysql": "^2.18.1",
     "node": "^14.0.0"
   }
 }

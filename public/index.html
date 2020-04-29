@@ -6,13 +6,33 @@
     <title>Document</title>
 </head>
 <body>
+    <ul id="comments">
+
+    </ul>
     <script>
         const data = {
             name:"gumeik"
         }
-        fetch("http://localhost:2003/test1",{
-            method:"post",
-            body:JSON.stringify(data)
+        const ulDom = document.getElementById("comments");
+        fetch("http://localhost:2003/queryAllComments").then(res=>res.json()).then(res=>{
+            console.log(res.data)
+            const dataArr = res.data;
+            // blog_id: 12
+            // comments: "hello啊，李银河"
+            // ctime: 20200422
+            // email: "3323435@qq.com"
+            // id: 1
+            // parent: 1
+            // parent_name: "gumei"
+            // user_name: "nan"
+            // utime: 20200423
+            for(let i = 0;i <dataArr.length;i++){
+                let str = `
+                评论：${dataArr[i].comments};  
+                作者：${dataArr[i].user_name}   ;<br/>
+                `;
+                ulDom.innerHTML += str;
+            }
         })
     </script>
 </body>
