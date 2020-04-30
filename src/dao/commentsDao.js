@@ -32,5 +32,6 @@ function queryAllComments(callback){
 }
 
 module.exports = {
-    queryAllComments
+    queryAllComments,
+    addComments
 }

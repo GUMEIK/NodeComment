@@ -14,25 +14,41 @@
             name:"gumeik"
         }
         const ulDom = document.getElementById("comments");
-        fetch("http://localhost:2003/queryAllComments").then(res=>res.json()).then(res=>{
-            console.log(res.data)
-            const dataArr = res.data;
-            // blog_id: 12
-            // comments: "hello啊，李银河"
-            // ctime: 20200422
-            // email: "3323435@qq.com"
-            // id: 1
-            // parent: 1
-            // parent_name: "gumei"
-            // user_name: "nan"
-            // utime: 20200423
-            for(let i = 0;i <dataArr.length;i++){
-                let str = `
-                评论：${dataArr[i].comments};  
-                作者：${dataArr[i].user_name}   ;<br/>
-                `;
-                ulDom.innerHTML += str;
-            }
+        // fetch("http://localhost:2003/queryAllComments").then(res=>res.json()).then(res=>{
+        //     console.log(res.data)
+        //     const dataArr = res.data;
+        //     // blog_id: 12
+        //     // comments: "hello啊，李银河"
+        //     // ctime: 20200422
+        //     // email: "3323435@qq.com"
+        //     // id: 1
+        //     // parent: 1
+        //     // parent_name: "gumei"
+        //     // user_name: "nan"
+        //     // utime: 20200423
+        //     for(let i = 0;i <dataArr.length;i++){
+        //         let str = `
+        //         评论：${dataArr[i].comments};  
+        //         作者：${dataArr[i].user_name}   ;<br/>
+        //         `;
+        //         ulDom.innerHTML += str;
+        //     }
+        // })
+        // http://localhost:2003/
+        fetch(`http://localhost:2003/addComments`,{
+            method:"post",
+            // 发送post请求时，根据服务器要求，要设置请求头
+            headers: {
+   　　　　 'Accept': 'application/json',
+//    　　　　 'Content-Type': 'application/json',
+ 　     },
+            body:JSON.stringify({
+                userName:"测试第三方第三方",
+                comments:"随便填上一些东西",
+                ctime:20200429
+            })
+        }).then(res=>res.json()).then(res=>{
+            console.log(res)
         })
     </script>
 </body>
